@@ -13,20 +13,22 @@ public class HipsterController
 	public HipsterController()
 	{
 		hipsters = new Hipster[6];
+		for (int index = 0; index < hipsters.length; index++)
+		{
+			hipsters[index] = new Hipster("hipster # " + index);
+		}
+
 		appFrame = new HipsterFrame(this);
 	}
 	
 	private void thirdLevelHipster()
 	{
-		numbers = new int [] {0,1,2,3,4,5,6,8,9,0,9,8,7,6,5,4,3,2,1,0};
+		numbers = new int [5];
 	}
 
 	public void start()
 	{
-		for (int index = 0; index < hipsters.length; index++)
-		{
-			hipsters[index] = new Hipster("");
-		}
+		
 		for(Hipster currentHipster : hipsters)
 		{
 			System.out.println(currentHipster + ", ");

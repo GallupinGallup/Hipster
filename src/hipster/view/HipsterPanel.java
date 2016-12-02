@@ -7,12 +7,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
+import javax.swing.*;
 
 public class HipsterPanel extends JPanel
 {
@@ -29,7 +24,7 @@ public class HipsterPanel extends JPanel
 		myButton = new JButton("Click here!");
 		wordsLabel = new JLabel("Such words");
 		baseLayout = new SpringLayout();
-		dropDown = new JComboBox(baseController.getWords());
+		dropDown = new JComboBox(baseController.getHipsters());
 		textBox = new JTextField();
 		
 		
@@ -70,10 +65,8 @@ public class HipsterPanel extends JPanel
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				System.out.println(baseController.getWords()[dropDown.getSelectedIndex()]);
-				String a = e.getActionCommand();
-				System.out.println(baseController.getWords()[dropDown.getSelectedIndex()]);
-				dropDown.setSelectedItem(a);
+				String selectedText = baseController.getHipsters()[dropDown.getSelectedIndex()].toString();
+				wordsLabel.setText(selectedText);
 			}
 		});
 		myButton.addActionListener(new ActionListener()
